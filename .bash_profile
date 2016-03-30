@@ -1,3 +1,6 @@
+alias gits="git status"
+alias subl="sublime"
+
 # Git branch in prompt.
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -55,7 +58,8 @@ function git_branch {
 PS1='\[`echo -e $dir_listing_color`\]\w \[`git_color`\]`git_branch` \[\e[0m\]🍔   '
 
 # git branch completion
-# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+# https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+# https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 if [ -f ~/.git-completion.bash ]; then
  . ~/.git-completion.bash
 fi
