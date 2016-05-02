@@ -55,6 +55,16 @@ function git_branch {
   fi
 }
 
+function cleanlocal {
+  echo "Before cleanup:"
+  git branch
+  echo "----"
+  git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+  echo "----"
+  echo "After cleanup:"
+  git branch
+}
+
 PS1='\[`echo -e $dir_listing_color`\]\w \[`git_color`\]`git_branch` \[\e[0m\]🍔   '
 
 # git branch completion
