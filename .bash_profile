@@ -73,6 +73,6 @@ PS1='\[`echo -e $dir_listing_color`\]\w \[`git_color`\]`git_branch` \[\e[0m\]üç
 if [ -f ~/.git-completion.bash ]; then
  . ~/.git-completion.bash
 fi
-if [ -f ~/.git-completion.bash ]; then
+if [ -f ~/.git-prompt.bash ]; then
  . ~/.git-prompt.bash
 fi
